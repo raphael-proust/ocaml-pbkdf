@@ -27,7 +27,11 @@
 Given a Hash/pseudorandom function, get the PBKDF
 </div>
 
-<pre><span id="VALpbkdf1"><span class="keyword">val</span> pbkdf1</span> : <code class="type">hash:Nocrypto.Hash.hash -><br>       password:Cstruct.t -> salt:Cstruct.t -> count:int -> dk_len:int -> Cstruct.t</code></pre><div class="info ">
+<pre><span id="VALpbkdf1"><span class="keyword">val</span> pbkdf1</span> : <code class="type">hash:[ `MD5 | `SHA1 ] -><br>       password:Cstruct.t -> salt:Cstruct.t -> count:int -> dk_len:int -> Cstruct.t</code></pre><div class="info ">
 convenience <code class="code">pbkdf1 hash password salt count dk_len</code> where the <code class="code">hash</code> has to be provided explicitly<br>
+</div>
+
+<pre><span id="VALpbkdf2"><span class="keyword">val</span> pbkdf2</span> : <code class="type">prf:Nocrypto.Hash.hash -><br>       password:Cstruct.t -><br>       salt:Cstruct.t -> count:int -> dk_len:int32 -> Cstruct.t</code></pre><div class="info ">
+convenience <code class="code">pbkdf2 prf password salt count dk_len</code> where the <code class="code">prf</code> has to be provided explicitly<br>
 </div>
 </body></html>

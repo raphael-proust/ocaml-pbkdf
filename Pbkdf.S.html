@@ -20,5 +20,12 @@
 <pre><span id="VALpbkdf1"><span class="keyword">val</span> pbkdf1</span> : <code class="type">password:Cstruct.t -> salt:Cstruct.t -> count:int -> dk_len:int -> Cstruct.t</code></pre><div class="info ">
 <code class="code">pbkdf1 password salt count dk_len</code> is <code class="code">dk</code>, the derived key of <code class="code">dk_len</code> octets.
       The <code class="code">salt</code> must be eight octets, <code class="code">count</code> the iteration count.<br>
+<b>Raises</b> <code>Invalid_argument</code> when either <code class="code">salt</code> is not eight octets long or either
+      <code class="code">count</code> or <code class="code">dk_len</code> are not valid.<br>
+</div>
+
+<pre><span id="VALpbkdf2"><span class="keyword">val</span> pbkdf2</span> : <code class="type">password:Cstruct.t -><br>       salt:Cstruct.t -> count:int -> dk_len:int32 -> Cstruct.t</code></pre><div class="info ">
+<code class="code">pbkdf2 password salt count dk_len</code> is <code class="code">dk</code>, the derived key of <code class="code">dk_len</code> octets.<br>
+<b>Raises</b> <code>Invalid_argument</code> when either <code class="code">count</code> or <code class="code">dk_len</code> are not valid<br>
 </div>
 </body></html>

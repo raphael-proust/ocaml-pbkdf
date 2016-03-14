@@ -14,10 +14,17 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;pbkdf1&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password:<span class="constructor">Cstruct</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;salt:<span class="constructor">Cstruct</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;count:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;dk_len:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Cstruct</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;pbkdf2&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password:<span class="constructor">Cstruct</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;salt:<span class="constructor">Cstruct</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;count:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;dk_len:int32&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Cstruct</span>.t<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
 &nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Make</span>&nbsp;:&nbsp;<span class="keyword">functor</span>&nbsp;(<span class="constructor">H</span>&nbsp;:&nbsp;<span class="constructor">Nocrypto</span>.<span class="constructor">Hash</span>.<span class="constructor">S</span>)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">S</span><br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;pbkdf1&nbsp;:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;hash:<span class="constructor">Nocrypto</span>.<span class="constructor">Hash</span>.hash&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;hash:[&nbsp;<span class="keywordsign">`</span><span class="constructor">MD5</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">SHA1</span>&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;password:<span class="constructor">Cstruct</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;salt:<span class="constructor">Cstruct</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;count:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;dk_len:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Cstruct</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;pbkdf2&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;prf:<span class="constructor">Nocrypto</span>.<span class="constructor">Hash</span>.hash&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;password:<span class="constructor">Cstruct</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;salt:<span class="constructor">Cstruct</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;count:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;dk_len:int32&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Cstruct</span>.t<br>
 <span class="keyword">end</span></code></body></html>
